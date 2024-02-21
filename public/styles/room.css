@@ -1,0 +1,455 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    width: 100px;
+    height: 40px;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+    font-weight: 400;
+    background-color: #14FFEC;
+    transition: background-color 0.2s;
+}
+input{
+    width: 100%;
+    height: 2rem;
+    padding-left: 0.2rem;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: #14FFEC solid 2px;
+    color: white;
+    font-size: 1.2rem;
+}
+#wrapper{
+    background-color: #323232;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.connection-board{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    border: solid #212121 2px;
+    border-radius: 4px;
+}
+
+
+.join-room, .create-room{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-room>button{
+    width: 10rem;
+}
+.join-room-form{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+.game-title{
+    font-size: 3rem;
+    font-weight: 500;
+    color: #14FFEC;
+}
+
+.room-status{
+    font-size: 1.2rem;
+    color: white;
+}
+
+.join-room-btns{
+    display: flex;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    bottom: 0;
+}
+.join-room-btns>button{
+    position: relative;
+}
+
+.connection-options{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.connection-options>button{
+    position: relative;
+    width: 9rem;
+}
+.connection-options>.game-title{
+    position: absolute;
+    top: 0.2rem;
+}
+.room-id{
+    font-size: 1.2rem;
+    color: white;
+}
+.loading{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.342);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.loading-bar{
+    border: solid rgb(156, 156, 156) 6px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    border-top-color: #14FFEC;
+    animation: loading infinite 1s linear;
+}
+.show-loading{
+    display: flex;
+}
+.name-input{
+    position: absolute;
+    top: 0;
+}
+.your-name{
+    color: #14FFEC;
+    font-size: large;
+    margin-top: 10px;
+}
+.room-creation{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.room-creation>button{
+    position: relative;
+
+}
+
+.notification-box{
+
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    height: 0;
+    width: 0;
+    word-wrap: break-word;
+    border-radius: 4px;
+    background-color: #14FFEC;
+    padding: 0rem;
+    opacity: 0;
+    font-size: 1.2rem;
+    transition: height width padding opacity border;
+    transition-duration: 0.2s;
+}
+.show-notification{
+    /* width: 20rem;
+    height: 10rem; */
+    height: auto;
+    width: max-content;
+    max-width: 20rem;
+    
+    padding: 0.4rem;
+    opacity: 1;
+
+    border: #212121 solid 2px;
+    transition: height width padding opacity border;
+    transition-duration: 0.2s;
+    z-index: 1000;
+}
+
+.title{
+    position: absolute;
+    top: -10rem;
+    font-size: 8rem;
+    color: #0D7377;
+}
+.waiting-anim{
+    margin-top: 5px;
+    padding: 2px;
+    display: flex;
+    width: 30px;
+    height: 10px;
+    animation: waiting 2s linear infinite;
+}
+.waiting-ball{
+    height: 100%;
+    width: 6px;
+    background-color: white;
+    display: flex;
+}
+
+.board{
+    border-radius: 4px;
+    position: relative;
+    width: 500px;
+    aspect-ratio: 1/1;
+    margin: 0.8rem ;
+    
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.3rem;
+}
+.bingo-title{
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    font-size: 4rem;
+    color: #0D7377;
+    font-weight: 600;
+}
+.bingo-title>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.grid-btn{
+    position:relative;
+    background: none;
+    outline: none;
+    border: none;
+    background-color: #14FFEC;
+    border: #212121 solid 2px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color;
+    transition-duration: 0.2s;
+    height: 100%;
+    width: 100%;
+}
+.players-details{
+    padding: 0.4rem;
+    position: absolute;
+    bottom: -4rem;
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.6rem;
+}
+.player{
+    position: relative;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: #0D7377 solid 1px;
+    color: #14FFEC;
+    border-radius: 5px;
+    flex: 1;
+}
+
+
+.fill-blocks{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    bottom: -4rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem;
+    color: #0D7377;
+    font-size: 2rem;
+}
+.fill-blocks>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-weight: 700;
+
+}
+.fill-blocks>button{
+    position: relative;
+}
+.waiting-players{
+    color: #14FFEC;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.waiting-status{
+    color: white;
+}
+.create-room-det, .waiting-room-det{
+    margin-top: 20px;
+    color: white;
+    display: flex;
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+.turn{
+    background-color: #0a6164;
+}
+.price-box{
+    position: absolute;
+    width: 100%;
+    height: 4rem;
+    bottom: -4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+}
+.congratulations{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    z-index: 10;
+    width: 100vw;
+    color: #14FFEC;
+    background-color: rgba(0, 0, 0, 0.253);
+    backdrop-filter: blur(8px);
+    top: 0;
+    font-size: 2rem;
+    font-weight: 500;
+
+    transition: height 0.4s;
+}
+
+.show-congratulations{
+    height: 300px;
+    transition: height 0.4s;
+}
+.after-game{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+}
+.game-end-button{
+    position: absolute;
+    bottom: -12rem;
+    right: 0;
+}
+@keyframes waiting {
+    0%{
+        justify-content: flex-start;
+    }
+    33%{
+        justify-content: center;
+    }
+    66%{
+        justify-content: flex-end;
+    }
+    100%{
+        justify-content: flex-start;
+    }
+}
+@keyframes loading{
+    0%{ 
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@media (hover:hover){
+    button:hover{
+        background-color: #0D7377;
+        transition: background-color 0.2s;
+    }
+    .grid-btn:hover{
+        background-color: #0D7377;
+        transition: background-color;
+        transition-duration: 0.2s
+    }
+}
+
+@media (max-width:500px){
+    .connection-board{
+        width: 100%;
+    }
+    .html{
+        font-size: 14px;
+    }
+    .congratulations{
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width:500px){
+    .board{
+        width: 100vw;
+    }
+}
+
+@media (max-height:680px){
+    .title{
+        top: 0px;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:300px) {
+    html{
+        font-size: 12px;
+    }
+    .congratulations{
+        font-size: 1.3rem;
+    }
+}
+.hide{
+    display: none;
+}
+
+

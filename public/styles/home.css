@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+#wrapper{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    background-color: #323232;
+    align-items: center;
+    flex-direction: column;
+    font-size: 9rem;
+    justify-content: space-evenly;
+    color: #14FFEC;
+    font-weight: 500;
+    overflow: hidden;
+}
+.submit-btn{
+    height: 4.4rem;
+    width: 11rem;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    font-weight: 400;
+    background-color: #14FFEC;
+    transition: background-color 0.2s;
+}
+.submit-btn:hover{
+    background-color: #0D7377;
+    transition: background-color 0.2s;
+}
+
+@media (max-width:800px) {
+    html{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:600px) {
+    html{
+        font-size: 12px;
+    }
+}
+@media (max-width:500px){
+    html{
+        font-size: 10px;
+    }
+}

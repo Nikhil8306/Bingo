@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect to Game</title>
+    <link rel="stylesheet" href="./styles/room.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="loading">
+        <div class="loading-bar"></div>
+    </div>
+
+
+    <div class="congratulations "></div>
+      
+    <div id="wrapper">
+        <div class="notification-box"></div>
+        
+        <!-- Connection Board -->
+        <div class="connection-board">
+            
+
+            <div class="connection-options ">
+                <div class="title">
+                    BINGO
+                </div>
+                <div class="name-input">
+                    <div class="your-name">Your Name:</div>
+                    <input type="text" class="user-name-input" value="User">
+                </div>
+                <button class="create-room-btn">Create Room</button>
+                <button class="join-room-btn">Join Room</button>
+            </div>
+
+            <div class="create-room hide">
+                <div class="game-title">
+                    Create Room
+                </div>
+                <div class="room-id">Room Id: </div>
+                <div class="room-status">
+                    1/3
+                </div>
+                <div class="waiting-anim">
+                    <div class="waiting-ball"></div>
+                </div>
+                <div class="create-room-det">
+
+                </div>
+                <div class="room-creation">
+                    <button class="start-room-button">Start</button>
+                    <button class="cancel-room-button">Cancel</button>
+                </div>
+            </div>  
+
+            <div class="join-room hide">
+                <form action="" onsubmit="return null" class="join-room-form">
+                    <div class="game-title">Join Game</div>
+                    <input type="text" id="join-game-id" placeholder="Enter game ID">
+                    <div class="join-room-btns">
+                        <button form="join-game-id" class="join-game-btn">Connect</button>
+                        <button form="join-game-id" class="join-game-cancel-btn">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="waiting-players hide">
+                <div style="margin-top: 10px;">Waiting for players to join</div>
+                <div style="margin-top: 10px;" class="waiting-status">
+                    1/3
+                </div>
+                <div class="waiting-anim">
+                    <div class="waiting-ball"></div>
+                </div>
+                <div class="waiting-room-det">
+
+                </div>
+                <button class="cancel-waiting-btn">Cancel</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- Board -->
+        <div class="board hide">
+            <div class="after-game hide"></div>
+            <div class="bingo-title">
+                <div class="b">B</div>
+                <div class="i">I</div>
+                <div class="n">N</div>
+                <div class="g">G</div>
+                <div class="o">O</div>
+            </div>
+            <button class="grid-btn 00"></button>
+            <button class="grid-btn 01"></button>
+            <button class="grid-btn 02"></button>
+            <button class="grid-btn 03"></button>
+            <button class="grid-btn 04"></button>
+            <button class="grid-btn 10"></button>
+            <button class="grid-btn 11"></button>
+            <button class="grid-btn 12"></button>
+            <button class="grid-btn 13"></button>
+            <button class="grid-btn 14"></button>
+            <button class="grid-btn 20"></button>
+            <button class="grid-btn 21"></button>
+            <button class="grid-btn 22"></button>
+            <button class="grid-btn 23"></button>
+            <button class="grid-btn 24"></button>
+            <button class="grid-btn 30"></button>
+            <button class="grid-btn 31"></button>
+            <button class="grid-btn 32"></button>
+            <button class="grid-btn 33"></button>
+            <button class="grid-btn 34"></button>
+            <button class="grid-btn 40"></button>
+            <button class="grid-btn 41"></button>
+            <button class="grid-btn 42"></button>
+            <button class="grid-btn 43"></button>
+            <button class="grid-btn 44"></button>
+            
+            <button class="game-end-button hide">Home</button>
+            <div class="fill-blocks ">
+                <div class="timer">30</div>
+                <button class="remove-prev-btn">←</button>
+            </div>
+    
+            <div class="players-details hide">
+            </div>
+        </div>
+
+    </div>
+    
+
+
+    
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/connection.js"></script>
+    <script src="./scripts/board.js"></script>
+</body>
+</html>
